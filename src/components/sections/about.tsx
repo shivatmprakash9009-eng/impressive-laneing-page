@@ -1,13 +1,8 @@
 import SectionHeading from "@/components/sections/section-heading";
-import SkillsNetwork from "@/components/sections/skills-network";
 
 export default function About() {
   return (
     <section className="about section-wrap" id="about" aria-labelledby="about-title">
-      <div className="about-visual toolkit-marquee-shell">
-        <div className="network-topline"><span>THE TOOLKIT</span><span>09 NODES · CONNECTED</span></div>
-        <SkillsNetwork />
-      </div>
       <SectionHeading eyebrow="A LITTLE ABOUT ME" title="Curiosity is my creative engine." index="01" id="about-title" />
       <div className="about-story reveal-up">
         <p className="about-lead">I build digital experiences where <span>precision meets personality.</span></p>
