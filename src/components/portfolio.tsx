@@ -1,6 +1,5 @@
 'use client';
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion, useSpring } from "framer-motion";
 import { ArrowDownRight, ArrowUpRight, Github, Linkedin, Menu, X, Code2, Send, MapPin, Mail, Phone, Globe2, Command } from "lucide-react";
@@ -97,7 +96,7 @@ function Hero() {
     <div className="hero-visual">
       <div className="hero-orbit orbit-one" /><div className="hero-orbit orbit-two" /><div className="hero-halo" />
       <div className="hero-image-frame">
-        <Image src={IMAGES.hero} alt="Portrait used for the fictional portfolio profile of Anurag" fill priority sizes="(max-width: 768px) 80vw, 42vw" className="hero-image" />
+        <img src={IMAGES.hero} alt="Portrait used for the fictional portfolio profile of Anurag" className="hero-image" />
         <div className="image-shade" />
       </div>
       <motion.div className="floating-card floating-location" animate={reduceMotion ? undefined : { y: [0, -7, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}><span className="mini-icon"><Code2 size={16} /></span><span><strong>Creative developer</strong><small>Turning ideas into interfaces</small></span></motion.div>
@@ -148,7 +147,7 @@ function ProjectCard({ project, index }: { project: typeof projects[number]; ind
   return <article className={`project-row project-${index + 1} ${reverse ? "project-reverse" : ""} project-reveal`}>
     <div className="project-visual">
       <div className={`project-image-wrap visual-${project.visual}`}>
-        <Image src={project.image} alt={`${project.title} concept preview`} fill sizes="(max-width: 800px) 90vw, 52vw" className="project-image" />
+        <img src={project.image} alt={`${project.title} concept preview`} className="project-image" loading="lazy" />
         <div className="project-image-overlay" />
         <div className="project-window-top"><span className="window-dots"><i /><i /><i /></span><span>CONCEPT / {project.number}</span><ArrowUpRight size={15} /></div>
         {project.visual === "pulse" && <div className="mock-ui mock-pulse"><span className="mock-kicker">YOUR SOUND, DECODED</span><strong>Listening<br />in full color.</strong><div className="sound-bars">{Array.from({ length: 22 }, (_, i) => <i key={i} style={{ height: `${18 + ((i * 23) % 75)}%` }} />)}</div><span className="mock-foot">WEEKLY LISTENING REPORT ↗</span></div>}
