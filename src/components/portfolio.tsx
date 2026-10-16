@@ -91,11 +91,11 @@ function Hero() {
       <motion.div className="status-pill" initial={reduceMotion ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .15 }}>
         <span className="availability-dot" /> DIGITAL CRAFT · FRONT-END DEVELOPMENT
       </motion.div>
-      <motion.h1 initial={reduceMotion ? false : { opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .2, ease: [.22, 1, .36, 1] }}>Hi, I’m <span className="gradient-word">Anurag</span><span className="hero-period">.</span></motion.h1>
+      <motion.h1 initial={reduceMotion ? false : { opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .2, ease: [.22, 1, .36, 1] }}>Hi, I’m <span className="gradient-word">Anurag</span></motion.h1>
       <motion.p className="hero-role" initial={reduceMotion ? false : { opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .35 }}>Front-End Developer<span className="role-period">.</span></motion.p>
-      <motion.p className="hero-description" initial={reduceMotion ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .45 }}>A self-taught front-end developer crafting modern, responsive, and human-centered digital experiences. I turn thoughtful design into fast, accessible interfaces with clean code and a little bit of magic.</motion.p>
+      <motion.p className="hero-description" initial={reduceMotion ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .45 }}>A self-taught front-end developer with 1+ years of experience. I build modern, responsive, user-friendly websites and web apps, focusing on clean code, efficient design, and seamless experiences that support real business goals.</motion.p>
       <motion.div className="hero-actions" initial={reduceMotion ? false : { opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65, delay: .58 }}>
-        <MagneticLink href="#contact" className="button button-primary">Let’s talk <ArrowUpRight size={16} /></MagneticLink>
+        <MagneticLink href="#contact" className="button button-primary">Contact <ArrowUpRight size={16} /></MagneticLink>
         <a href="#work" className="button button-quiet">Explore my work <ArrowDownRight size={16} /></a>
       </motion.div>
       <motion.div className="hero-footnote" initial={reduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .9, duration: .8 }}><span className="hero-footnote-line" /> Scroll to discover <span className="hero-footnote-index">01 / 04</span></motion.div>
@@ -139,9 +139,9 @@ function About() {
     <div className="about-grid">
       <div className="about-story reveal-up">
         <p className="about-lead">I build digital experiences where <span>precision meets personality.</span></p>
-        <p>I’m a self-taught front-end developer who enjoys turning complex ideas into simple, intuitive interfaces. My process moves from understanding the problem to shaping a visual system, then bringing it to life with reusable components and considered motion.</p>
-        <p>I care about the details users feel more than they notice: a transition that guides rather than distracts, a layout that holds together at every screen size, and code that stays readable long after launch.</p>
-        <div className="about-interests"><span><span className="interest-line" /> Outside the browser</span><p>Long rides, new places, good music, and the kind of curiosity that makes you ask, “What if?”</p></div>
+        <p>I’m a self-taught front-end developer exploring advanced JavaScript architecture and modular UI patterns. I turn complex ideas into intuitive interfaces through reusable components, deliberate visual systems, and accessible interactions.</p>
+        <p>I care about the details users feel more than they notice: motion that guides rather than distracts, layouts that hold together at every screen size, and code that stays readable long after launch.</p>
+        <div className="about-interests"><span><span className="interest-line" /> Outside the browser</span><p>Active cycling, outdoor exploring, and high-fidelity music — the kind of off-screen resets that keep curiosity switched on.</p></div>
         <div className="about-stats"><div><strong>01<span>+</span></strong><small>YEAR OF BUILDING</small></div><div><strong>09</strong><small>TOOLS IN MY KIT</small></div><div><strong>∞</strong><small>THINGS TO LEARN</small></div></div>
       </div>
       <div className="about-visual reveal-up"><div className="network-topline"><span>THE TOOLKIT</span><span>09 NODES · CONNECTED</span></div><SkillsNetwork /><div className="network-bottomline"><span>LEARN BY MAKING</span><span className="live-indicator"><i /> SYSTEM ONLINE</span></div></div>
@@ -203,7 +203,7 @@ function Contact() {
         <div className="contact-details">
           <a href="tel:+919876543210" className="contact-detail"><span className="detail-icon"><Phone size={16} /></span><span><small>GIVE ME A CALL</small><strong>+91 9876543210</strong></span><ArrowUpRight size={16} /></a>
           <a href="mailto:anurag@example.com" className="contact-detail"><span className="detail-icon"><Mail size={16} /></span><span><small>DROP AN EMAIL</small><strong>anurag@example.com</strong></span><ArrowUpRight size={16} /></a>
-          <div className="contact-detail"><span className="detail-icon"><MapPin size={16} /></span><span><small>BASED IN</small><strong>India · Open to remote</strong></span><Globe2 size={16} /></div>
+          <div className="contact-detail"><span className="detail-icon"><MapPin size={16} /></span><span><small>LOCATION</small><strong>123 Street, City, 146001, Bihar, India</strong></span><Globe2 size={16} /></div>
         </div>
       </div>
       <form className="contact-form reveal-up" onSubmit={submit} noValidate>
@@ -221,7 +221,7 @@ function Contact() {
 }
 
 function Footer() {
-  return <footer className="footer section-wrap"><div className="footer-top"><a href="#home" className="brand"><span className="brand-mark"><Command size={16} /></span><span>anurag<span className="brand-dot">.</span></span></a><p>Thoughtfully made. <span>Intentionally different.</span></p><a className="back-top" href="#home">BACK TO TOP <ArrowUpRight size={14} /></a></div><div className="footer-bottom"><span>© 2026 ANURAG. ALL RIGHTS RESERVED.</span><span className="footer-note">DESIGNED WITH CURIOSITY · BUILT WITH CARE</span><div className="footer-socials"><a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={16} /></a><a href="https://x.com" target="_blank" rel="noreferrer" aria-label="Twitter / X"><span className="x-icon">𝕏</span></a><a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={16} /></a></div></div></footer>;
+  return <footer className="footer section-wrap"><div className="footer-top"><a href="#home" className="brand"><span className="brand-mark"><Command size={16} /></span><span>anurag<span className="brand-dot">.</span></span></a><p>Thoughtfully made. <span>Intentionally different.</span></p><a className="back-top" href="#home">BACK TO TOP <ArrowUpRight size={14} /></a></div><div className="footer-bottom"><span>© 2026 Anurag. All rights reserved.</span><span className="footer-note">DESIGNED WITH CURIOSITY · BUILT WITH CARE</span><div className="footer-socials"><a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={16} /></a><a href="https://x.com" target="_blank" rel="noreferrer" aria-label="Twitter / X"><span className="x-icon">𝕏</span></a><a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={16} /></a></div></div></footer>;
 }
 
 export default function Portfolio() {
