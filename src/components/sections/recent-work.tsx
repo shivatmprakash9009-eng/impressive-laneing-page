@@ -7,7 +7,7 @@ export default function RecentWork() {
   return (
     <section className="work section-wrap" id="work" aria-labelledby="work-title">
       <div className="work-heading-row">
-        <SectionHeading eyebrow="SELECTED WORK · 2024—2026" title="Ideas, made tangible." index="02" />
+        <SectionHeading eyebrow="SELECTED WORK · 2024—2026" title="Ideas, made tangible." index="02" id="work-title" />
         <p className="work-intro reveal-up">A collection of explorations in interface design, front-end craft, and the little details that make a digital product memorable.</p>
       </div>
       <div className="project-list">

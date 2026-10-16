@@ -47,7 +47,7 @@ export default function Navbar() {
           <span className="brand-mark"><Command size={17} /></span>
           <span>anurag<span className="brand-dot">.</span></span>
         </a>
-        <div className={`nav-links ${open ? "nav-links-open" : ""}`}>
+        <div id="primary-nav-links" className={`nav-links ${open ? "nav-links-open" : ""}`}>
           {navItems.map((item) => (
             <a
               key={item.href}

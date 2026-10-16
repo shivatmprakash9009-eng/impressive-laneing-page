@@ -39,7 +39,7 @@ export default function Contact() {
 
   return (
     <section className="contact section-wrap" id="contact" aria-labelledby="contact-title">
-      <SectionHeading eyebrow="HAVE SOMETHING IN MIND?" title="Let’s make it real." index="03" />
+      <SectionHeading eyebrow="HAVE SOMETHING IN MIND?" title="Let’s make it real." index="03" id="contact-title" />
       <div className="contact-grid">
         <div className="contact-copy reveal-up">
           <p className="contact-lead">Good work starts with a <span>good conversation.</span></p>
