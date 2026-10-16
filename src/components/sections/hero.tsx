@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDownRight, ArrowUpRight, Code2 } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { IMAGES } from "@/lib/portfolio-data";
 import MagneticLink from "@/components/ui/magnetic-link";
 
@@ -81,22 +81,6 @@ export default function Hero() {
           />
           <div className="image-shade" />
         </div>
-        <motion.div
-          className="floating-card floating-location"
-          animate={reduceMotion ? undefined : { y: [0, -7, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <span className="mini-icon"><Code2 size={16} /></span>
-          <span><strong>Creative developer</strong><small>Turning ideas into interfaces</small></span>
-        </motion.div>
-        <motion.div
-          className="floating-card floating-stack"
-          animate={reduceMotion ? undefined : { y: [0, 8, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-        >
-          <span className="stack-dot" />
-          <span><strong>Currently building</strong><small>Experiences that feel alive</small></span>
-        </motion.div>
         <div className="visual-caption"><span>FIG. 01</span><span>DESIGN MEETS DEVELOPMENT</span></div>
       </div>
     </section>
