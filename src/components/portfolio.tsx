@@ -65,6 +65,13 @@ function Navbar() {
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
   }, []);
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, []);
   return <header className="nav-shell">
     <nav className="navbar" aria-label="Main navigation">
       <a href="#home" className="brand" aria-label="Anurag home"><span className="brand-mark"><Command size={17} /></span><span>anurag<span className="brand-dot">.</span></span></a>
@@ -81,17 +88,17 @@ function Hero() {
   const reduceMotion = useReducedMotion();
   return <section className="hero section-wrap" id="home">
     <div className="hero-copy">
-      <motion.div className="status-pill" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .15 }}>
+      <motion.div className="status-pill" initial={reduceMotion ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .15 }}>
         <span className="availability-dot" /> DIGITAL CRAFT · FRONT-END DEVELOPMENT
       </motion.div>
-      <motion.h1 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .2, ease: [.22, 1, .36, 1] }}>Hi, I’m <span className="gradient-word">Anurag</span><span className="hero-period">.</span></motion.h1>
-      <motion.p className="hero-role" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .35 }}>Front-End Developer<span className="role-period">.</span></motion.p>
-      <motion.p className="hero-description" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .45 }}>A self-taught front-end developer crafting modern, responsive, and human-centered digital experiences. I turn thoughtful design into fast, accessible interfaces with clean code and a little bit of magic.</motion.p>
-      <motion.div className="hero-actions" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65, delay: .58 }}>
+      <motion.h1 initial={reduceMotion ? false : { opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .2, ease: [.22, 1, .36, 1] }}>Hi, I’m <span className="gradient-word">Anurag</span><span className="hero-period">.</span></motion.h1>
+      <motion.p className="hero-role" initial={reduceMotion ? false : { opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .35 }}>Front-End Developer<span className="role-period">.</span></motion.p>
+      <motion.p className="hero-description" initial={reduceMotion ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .45 }}>A self-taught front-end developer crafting modern, responsive, and human-centered digital experiences. I turn thoughtful design into fast, accessible interfaces with clean code and a little bit of magic.</motion.p>
+      <motion.div className="hero-actions" initial={reduceMotion ? false : { opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65, delay: .58 }}>
         <MagneticLink href="#contact" className="button button-primary">Let’s talk <ArrowUpRight size={16} /></MagneticLink>
         <a href="#work" className="button button-quiet">Explore my work <ArrowDownRight size={16} /></a>
       </motion.div>
-      <motion.div className="hero-footnote" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .9, duration: .8 }}><span className="hero-footnote-line" /> Scroll to discover <span className="hero-footnote-index">01 / 04</span></motion.div>
+      <motion.div className="hero-footnote" initial={reduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .9, duration: .8 }}><span className="hero-footnote-line" /> Scroll to discover <span className="hero-footnote-index">01 / 04</span></motion.div>
     </div>
     <div className="hero-visual">
       <div className="hero-orbit orbit-one" /><div className="hero-orbit orbit-two" /><div className="hero-halo" />
@@ -108,7 +115,7 @@ function Hero() {
 
 function SkillsNetwork() {
   const reduceMotion = useReducedMotion();
-  return <div className="skills-network" aria-label="Technology skills constellation">
+  return <div className="skills-network" role="group" aria-label="Technology skills constellation">
     <svg className="network-lines" viewBox="0 0 600 430" aria-hidden="true"><defs><linearGradient id="lineGlow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#00f2fe" stopOpacity=".6" /><stop offset="1" stopColor="#e100ff" stopOpacity=".1" /></linearGradient></defs>{skills.map((skill, i) => {
       const angle = (i / skills.length) * Math.PI * 2 - Math.PI / 2;
       const x = 300 + Math.cos(angle) * 208;
@@ -201,9 +208,9 @@ function Contact() {
       </div>
       <form className="contact-form reveal-up" onSubmit={submit} noValidate>
         <div className="form-heading"><div><span className="eyebrow">YOUR NEXT BIG IDEA</span><h3>Send a message<span>.</span></h3></div><span className="form-number">FORM / 01</span></div>
-        <div className="form-field"><label htmlFor="name">Your name</label><input id="name" name="name" type="text" placeholder="How should I call you?" autoComplete="name" value={form.name} onChange={(event) => { setForm({ ...form, name: event.target.value }); setStatus("idle"); }} aria-invalid={status === "invalid" && !form.name.trim()} /></div>
-        <div className="form-field"><label htmlFor="email">Email address</label><input id="email" name="email" type="email" placeholder="you@example.com" autoComplete="email" value={form.email} onChange={(event) => { setForm({ ...form, email: event.target.value }); setStatus("idle"); }} aria-invalid={status === "invalid" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)} /></div>
-        <div className="form-field"><label htmlFor="message">What’s on your mind?</label><textarea id="message" name="message" rows={4} placeholder="Tell me a little about your project..." value={form.message} onChange={(event) => { setForm({ ...form, message: event.target.value }); setStatus("idle"); }} aria-invalid={status === "invalid" && !form.message.trim()} /></div>
+        <div className="form-field"><label htmlFor="name">Your name</label><input id="name" name="name" type="text" required placeholder="How should I call you?" autoComplete="name" value={form.name} onChange={(event) => { setForm({ ...form, name: event.target.value }); setStatus("idle"); }} aria-invalid={status === "invalid" && !form.name.trim()} /></div>
+        <div className="form-field"><label htmlFor="email">Email address</label><input id="email" name="email" type="email" required placeholder="you@example.com" autoComplete="email" value={form.email} onChange={(event) => { setForm({ ...form, email: event.target.value }); setStatus("idle"); }} aria-invalid={status === "invalid" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)} /></div>
+        <div className="form-field"><label htmlFor="message">What’s on your mind?</label><textarea id="message" name="message" rows={4} required placeholder="Tell me a little about your project..." value={form.message} onChange={(event) => { setForm({ ...form, message: event.target.value }); setStatus("idle"); }} aria-invalid={status === "invalid" && !form.message.trim()} /></div>
         {status === "invalid" && <p className="form-error" role="alert">Please complete all fields with a valid email address.</p>}
         {status === "ready" && <p className="form-success" role="status">Opening your email app with the message drafted.</p>}
         <button type="submit" className="button button-primary form-submit">Send message <Send size={15} /></button>
@@ -218,6 +225,22 @@ function Footer() {
 }
 
 export default function Portfolio() {
+  useEffect(() => {
+    const updateScrollProgress = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+      document.documentElement.style.setProperty("--scroll-progress", `${Math.min(100, Math.max(0, progress))}%`);
+    };
+    updateScrollProgress();
+    window.addEventListener("scroll", updateScrollProgress, { passive: true });
+    window.addEventListener("resize", updateScrollProgress, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", updateScrollProgress);
+      window.removeEventListener("resize", updateScrollProgress);
+      document.documentElement.style.setProperty("--scroll-progress", "0%");
+    };
+  }, []);
+
   useGSAP(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) return;
