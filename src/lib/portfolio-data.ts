@@ -1,5 +1,5 @@
 export const IMAGES = {
-  hero: "https://i.ibb.co/xt0GdQZx/aileenweifeng-lol-2553537.jpg",
+  hero: "https://i.ibb.co/DgPGVBzq/file-00000000212c8208848844cfe89b33ac.png",
   office: "https://i.ibb.co/zTPY8sXp/jdpereiro-office-space-1744805.jpg",
   meeting: "https://i.ibb.co/m5GhB3Bs/pexels-chairs-2181951.jpg",
   chairs: "https://i.ibb.co/nqw59ZcJ/pexels-chairs-2181960.jpg",
