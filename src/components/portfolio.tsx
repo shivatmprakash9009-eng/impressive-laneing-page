@@ -8,6 +8,7 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
+import SkillsNetwork from "@/components/sections/skills-network";
 import RecentWork from "@/components/sections/recent-work";
 import Contact from "@/components/sections/contact";
 
@@ -117,6 +118,9 @@ export default function Portfolio() {
       <div className="parallax-shape parallax-shape-two" aria-hidden="true" />
       <Navbar />
       <Hero />
+      <section className="toolkit-marquee-shell" aria-label="Technology toolkit">
+        <SkillsNetwork />
+      </section>
       <About />
       <RecentWork />
       <Contact />
