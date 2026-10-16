@@ -268,6 +268,7 @@ export default function Portfolio() {
     return () => window.removeEventListener("mousemove", onMove);
   });
   return <main className="site-shell">
+    <a href="#home" className="skip-link">Skip to content</a><div className="scroll-progress" aria-hidden="true" />
     <div className="background-noise" aria-hidden="true" /><div className="parallax-shape parallax-shape-one" aria-hidden="true" /><div className="parallax-shape parallax-shape-two" aria-hidden="true" />
     <Navbar /><Hero /><About /><RecentWork /><Contact /><Footer />
   </main>;
