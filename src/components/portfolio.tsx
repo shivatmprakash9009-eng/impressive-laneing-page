@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion, useSpring } from "framer-motion";
-import { ArrowDownRight, ArrowUpRight, Github, Linkedin, Menu, X, Code2, Layers3, Sparkles, Send, MapPin, Mail, Phone, Globe2, Command } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Github, Linkedin, Menu, X, Code2, Send, MapPin, Mail, Phone, Globe2, Command } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -244,7 +244,7 @@ export default function Portfolio() {
     };
     window.addEventListener("mousemove", onMove, { passive: true });
     return () => window.removeEventListener("mousemove", onMove);
-  }, { scope: undefined });
+  });
   return <main className="site-shell">
     <div className="background-noise" aria-hidden="true" /><div className="parallax-shape parallax-shape-one" aria-hidden="true" /><div className="parallax-shape parallax-shape-two" aria-hidden="true" />
     <Navbar /><Hero /><About /><RecentWork /><Contact /><Footer />
