@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { DM_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta", display: "swap" });
+const dmMono = DM_Mono({ weight: ["400", "500"], subsets: ["latin"], variable: "--font-dm-mono", display: "swap" });
 
 export const metadata: Metadata = {
   title: "Anurag — Front-End Developer",
@@ -15,5 +16,5 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: "#070314", width: "device-width", initialScale: 1 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body className={`${plusJakarta.variable}`}>{children}</body></html>;
+  return <html lang="en"><body className={`${plusJakarta.variable} ${dmMono.variable}`}>{children}</body></html>;
 }
