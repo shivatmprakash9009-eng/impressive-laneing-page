@@ -7,20 +7,25 @@ export const IMAGES = {
 
 export type Skill = {
   name: string;
-  short: string;
+  logo: string;
+  color: string;
   className: string;
+  secondaryLogo?: string;
+  secondaryColor?: string;
 };
 
+const simpleIcon = (slug: string, color: string) => `https://cdn.simpleicons.org/${slug}/${color}`;
+
 export const skills: Skill[] = [
-  { name: "HTML5", short: "HTML", className: "skill-html" },
-  { name: "CSS3", short: "CSS", className: "skill-css" },
-  { name: "JavaScript", short: "JS", className: "skill-js" },
-  { name: "React", short: "Re", className: "skill-react" },
-  { name: "Next.js", short: "N", className: "skill-next" },
-  { name: "Git & GitHub", short: "Git", className: "skill-git" },
-  { name: "GSAP", short: "GS", className: "skill-gsap" },
-  { name: "Framer Motion", short: "FM", className: "skill-framer" },
-  { name: "Tailwind CSS", short: "TW", className: "skill-tailwind" },
+  { name: "HTML5", logo: simpleIcon("html5", "E34F26"), color: "#E34F26", className: "skill-html" },
+  { name: "CSS3", logo: simpleIcon("css3", "1572B6"), color: "#1572B6", className: "skill-css" },
+  { name: "JavaScript", logo: simpleIcon("javascript", "F7DF1E"), color: "#F7DF1E", className: "skill-js" },
+  { name: "React", logo: simpleIcon("react", "61DAFB"), color: "#61DAFB", className: "skill-react" },
+  { name: "Next.js", logo: simpleIcon("nextdotjs", "FFFFFF"), color: "#FFFFFF", className: "skill-next" },
+  { name: "Git & GitHub", logo: simpleIcon("git", "F05032"), color: "#F05032", className: "skill-git", secondaryLogo: simpleIcon("github", "FFFFFF"), secondaryColor: "#FFFFFF" },
+  { name: "GSAP", logo: simpleIcon("greensock", "88CE02"), color: "#88CE02", className: "skill-gsap" },
+  { name: "Framer Motion", logo: simpleIcon("framer", "FFFFFF"), color: "#FFFFFF", className: "skill-framer" },
+  { name: "Tailwind CSS", logo: simpleIcon("tailwindcss", "06B6D4"), color: "#06B6D4", className: "skill-tailwind" },
 ];
 
 export type Project = {

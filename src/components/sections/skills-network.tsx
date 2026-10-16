@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { skills } from "@/lib/portfolio-data";
 
@@ -8,32 +9,14 @@ export default function SkillsNetwork() {
 
   return (
     <div className="skills-network" role="group" aria-label="Technology skills constellation">
-      <svg className="network-lines" viewBox="0 0 600 430" aria-hidden="true">
-        <defs>
-          <linearGradient id="lineGlow" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#00f2fe" stopOpacity=".6" />
-            <stop offset="1" stopColor="#e100ff" stopOpacity=".1" />
-          </linearGradient>
-        </defs>
-        {skills.map((skill, i) => {
-          const angle = (i / skills.length) * Math.PI * 2 - Math.PI / 2;
-          const x = 300 + Math.cos(angle) * 208;
-          const y = 210 + Math.sin(angle) * 142;
-          return (
-            <path
-              key={skill.name}
-              d={`M 300 210 Q ${(300 + x) / 2 + (i % 2 ? 28 : -28)} ${(210 + y) / 2 - 20} ${x} ${y}`}
-              stroke="url(#lineGlow)"
-              strokeWidth="1"
-              strokeDasharray="4 6"
-              fill="none"
-            />
-          );
-        })}
-      </svg>
+      <div className="network-lines" aria-hidden="true">
+        {skills.map((skill, i) => (
+          <span key={skill.name} className={`network-spoke spoke-${i + 1}`} />
+        ))}
+      </div>
       <div className="network-core">
         <div className="core-glow" />
-        <div className="core-mark">Σ</div>
+        <div className="core-mark" aria-hidden="true">Σ</div>
         <span>BUILD / EXPLORE</span>
       </div>
       {skills.map((skill, i) => {
@@ -45,12 +28,19 @@ export default function SkillsNetwork() {
           <motion.div
             key={skill.name}
             title={skill.name}
+            aria-label={skill.name}
             className={`skill-node ${skill.className}`}
-            style={{ left: `${x}%`, top: `${y}%` }}
-            animate={reduceMotion ? undefined : { y: [0, -10, 0] }}
+            style={{ left: `${x}%`, top: `${y}%`, "--skill-color": skill.color } as React.CSSProperties}
+            animate={reduceMotion ? undefined : { y: [0, -7, 0] }}
             transition={{ duration: 3.5 + i * 0.31, delay: i * 0.17, repeat: Infinity, ease: "easeInOut" }}
           >
-            <span>{skill.short}</span><small>{skill.name}</small>
+            <span className={skill.secondaryLogo ? "skill-logo-pair" : "skill-logo"}>
+              <Image src={skill.logo} alt="" width={28} height={28} unoptimized className="skill-logo-image" />
+              {skill.secondaryLogo && (
+                <Image src={skill.secondaryLogo} alt="" width={24} height={24} unoptimized className="skill-logo-image skill-logo-secondary" />
+              )}
+            </span>
+            <small>{skill.name}</small>
           </motion.div>
         );
       })}

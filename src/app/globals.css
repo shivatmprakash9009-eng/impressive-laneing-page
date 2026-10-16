@@ -108,15 +108,28 @@ img { display: block; max-width: 100%; }
 .network-topline, .network-bottomline { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; color: #77728e; font-family: var(--font-mono); font-size: 8px; letter-spacing: 1px; }
 .network-topline span:first-child { color: var(--cyan); }
 .skills-network { position: relative; min-height: 410px; margin-top: 6px; overflow: hidden; }
-.network-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.network-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.network-spoke { position: absolute; left: 50%; top: 49%; width: 1px; height: 34%; transform-origin: top center; opacity: .48; background: linear-gradient(to bottom, rgba(0,242,254,.45), rgba(225,0,255,.08)); }
+.network-spoke:nth-child(1) { transform: rotate(0deg); }
+.network-spoke:nth-child(2) { transform: rotate(40deg); }
+.network-spoke:nth-child(3) { transform: rotate(80deg); }
+.network-spoke:nth-child(4) { transform: rotate(120deg); }
+.network-spoke:nth-child(5) { transform: rotate(160deg); }
+.network-spoke:nth-child(6) { transform: rotate(200deg); }
+.network-spoke:nth-child(7) { transform: rotate(240deg); }
+.network-spoke:nth-child(8) { transform: rotate(280deg); }
+.network-spoke:nth-child(9) { transform: rotate(320deg); }
 .network-core { position: absolute; left: 50%; top: 49%; transform: translate(-50%,-50%); width: 114px; height: 114px; border-radius: 50%; display: grid; place-items: center; align-content: center; gap: 10px; border: 1px solid rgba(0,242,254,.27); background: radial-gradient(circle at 35% 25%,rgba(225,0,255,.18),rgba(13,6,38,.96) 65%); box-shadow: inset 0 0 30px rgba(0,242,254,.06), 0 0 60px rgba(127,0,255,.17); }
 .core-glow { position: absolute; inset: -14px; border-radius: 50%; border: 1px dashed rgba(225,0,255,.2); animation: orbit-rotate 38s linear infinite; }
 .core-mark { color: white; font-family: Georgia,serif; font-size: 52px; line-height: 1; font-weight: 400; text-shadow: 0 0 25px rgba(0,242,254,.6),0 0 35px rgba(225,0,255,.45); }
 .network-core > span { color: #8d89aa; font-family: var(--font-mono); font-size: 7px; letter-spacing: 1.5px; }
-.skill-node { position: absolute; z-index: 3; transform: translate(-50%,-50%); width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.13); border-radius: 15px; background: rgba(13,6,38,.95); box-shadow: 0 10px 26px rgba(0,0,0,.32); color: #fff; }
-.skill-node > span { font-size: 12px; font-weight: 700; letter-spacing: -.4px; }
-.skill-node small { position: absolute; top: calc(100% + 7px); left: 50%; transform: translateX(-50%); width: max-content; color: #8985a3; font-size: 8px; font-weight: 500; }
-.skill-html { color: #fb805f; border-color: rgba(251,128,95,.2); }.skill-css { color: #61a9ff; border-color: rgba(97,169,255,.2); }.skill-js { color: #f6d65a; border-color: rgba(246,214,90,.2); }.skill-react { color: #61e2ff; border-color: rgba(97,226,255,.2); }.skill-next { color: #fff; }.skill-git { color: #ff8f81; }.skill-gsap { color: #97ff8c; }.skill-framer { color: #ef96ff; }.skill-tailwind { color: #7ae6ed; }
+.skill-node { position: absolute; z-index: 3; transform: translate(-50%,-50%); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border: 1px solid color-mix(in srgb, var(--skill-color) 24%, transparent); border-radius: 17px; background: linear-gradient(145deg, rgba(20,13,47,.98), rgba(8,4,25,.98)); box-shadow: 0 10px 26px rgba(0,0,0,.32), inset 0 1px rgba(255,255,255,.035); transition: border-color .25s ease, box-shadow .25s ease, background .25s ease; }
+.skill-node:hover { border-color: color-mix(in srgb, var(--skill-color) 65%, transparent); box-shadow: 0 14px 34px rgba(0,0,0,.4), 0 0 24px color-mix(in srgb, var(--skill-color) 13%, transparent); }
+.skill-logo, .skill-logo-pair { display: flex; align-items: center; justify-content: center; gap: 3px; width: 100%; }
+.skill-logo-image { display: block; width: 29px; height: 29px; object-fit: contain; filter: drop-shadow(0 0 7px color-mix(in srgb, var(--skill-color) 12%, transparent)); }
+.skill-logo-secondary { width: 23px; height: 23px; }
+.skill-node small { position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); width: max-content; color: #aaa6c3; font-size: 8px; font-weight: 500; text-shadow: 0 2px 8px #070314; }
+
 .network-orbit { position: absolute; top: 49%; left: 50%; border: 1px solid rgba(127,0,255,.15); border-radius: 50%; transform: translate(-50%,-50%); pointer-events: none; }
 .orbit-a { width: 55%; height: 34%; }.orbit-b { width: 75%; height: 50%; border-color: rgba(0,242,254,.1); transform: translate(-50%,-50%) rotate(-25deg); }.orbit-c { width: 86%; height: 59%; border-style: dashed; border-color: rgba(225,0,255,.13); transform: translate(-50%,-50%) rotate(22deg); }
 .live-indicator { display: inline-flex; gap: 7px; align-items: center; }
