@@ -18,7 +18,7 @@ const simpleIcon = (slug: string, color: string) => `https://cdn.simpleicons.org
 
 export const skills: Skill[] = [
   { name: "HTML5", logo: simpleIcon("html5", "E34F26"), color: "#E34F26", className: "skill-html" },
-  { name: "CSS3", logo: simpleIcon("css3", "1572B6"), color: "#1572B6", className: "skill-css" },
+  { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg", color: "#1572B6", className: "skill-css" },
   { name: "JavaScript", logo: simpleIcon("javascript", "F7DF1E"), color: "#F7DF1E", className: "skill-js" },
   { name: "React", logo: simpleIcon("react", "61DAFB"), color: "#61DAFB", className: "skill-react" },
   { name: "Next.js", logo: simpleIcon("nextdotjs", "FFFFFF"), color: "#FFFFFF", className: "skill-next" },
