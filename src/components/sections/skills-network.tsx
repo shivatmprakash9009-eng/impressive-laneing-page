@@ -8,7 +8,13 @@ export default function SkillsNetwork() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <div className="skills-network" role="group" aria-label="Technology skills constellation">
+    <motion.div
+      className="skills-network"
+      role="group"
+      aria-label="Technology skills constellation"
+      animate={reduceMotion ? undefined : { x: [-10, 10] }}
+      transition={{ duration: 19, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+    >
       <div className="network-lines" aria-hidden="true">
         {skills.map((skill, i) => (
           <span key={skill.name} className={`network-spoke spoke-${i + 1}`} />
@@ -47,6 +53,6 @@ export default function SkillsNetwork() {
       <div className="network-orbit orbit-a" />
       <div className="network-orbit orbit-b" />
       <div className="network-orbit orbit-c" />
-    </div>
+    </motion.div>
   );
 }
