@@ -10,7 +10,8 @@ A responsive, animation-led developer portfolio built with Next.js App Router, R
 - Four alternating featured-work cards with editorial mock UI overlays and supplied image assets.
 - Contact form with browser-side validation and a prefilled email-app handoff.
 - Active-section navigation, mobile menu, magnetic CTAs, scroll reveals, cursor-reactive parallax, and reduced-motion support.
-- Semantic landmarks, labelled form fields, accessible interactive names, and responsive layouts.
+- Semantic landmarks, labelled form fields, accessible interactive names, skip navigation, keyboard-dismissable mobile menu, and reduced-motion support.
+- Custom branded 404 route and a basic `robots.txt` metadata route.
 
 ## Requirements
 
@@ -61,4 +62,4 @@ The project showcase entries are portfolio concepts and are not evidence that th
 - Deep indigo: `#7f00ff`
 - Font pairing: Plus Jakarta Sans with DM Mono for small technical labels.
 
-The supplied Figma file was not accessible to the connected Figma integration during implementation, so the user-provided screenshots and written design requirements were used as the visual reference.
+The supplied Figma file was not accessible to the connected Figma integration during implementation, so the user-provided screenshots and written design requirements were used as the visual reference. The repository includes GitHub Actions checks for linting, TypeScript, and production compilation.
