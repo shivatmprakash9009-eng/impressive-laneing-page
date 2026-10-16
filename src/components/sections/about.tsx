@@ -1,4 +1,5 @@
 import SectionHeading from "@/components/sections/section-heading";
+import AboutStats from "@/components/sections/about-stats";
 
 export default function About() {
   return (
@@ -16,11 +17,7 @@ export default function About() {
           <span><span className="interest-line" /> Outside the browser</span>
           <p>Active cycling, outdoor exploring, and high-fidelity music — the kind of off-screen resets that keep curiosity switched on.</p>
         </div>
-        <div className="about-stats">
-          <div><strong>01<span>+</span></strong><small>YEAR OF BUILDING</small></div>
-          <div><strong>09</strong><small>TOOLS IN MY KIT</small></div>
-          <div><strong>∞</strong><small>THINGS TO LEARN</small></div>
-        </div>
+        <AboutStats />
       </div>
     </section>
   );
