@@ -58,7 +58,7 @@ export default function Navbar() {
               {item.label}<span />
             </a>
           ))}
-          <a className="nav-availability" href="#contact">
+          <a className="nav-availability" href="#contact" onClick={() => setOpen(false)}>
             <span className="availability-dot" /> Available for work
           </a>
         </div>
