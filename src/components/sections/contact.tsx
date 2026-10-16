@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowUpRight, Globe2, Mail, MapPin, Phone, Send } from "lucide-react";
+import { ArrowUpRight, Mail, Send } from "lucide-react";
 import SectionHeading from "@/components/sections/section-heading";
 
 type FormValues = {
@@ -45,27 +45,16 @@ export default function Contact() {
           <p className="contact-lead">Good work starts with a <span>good conversation.</span></p>
           <p>Have a product idea, a collaboration in mind, or just want to talk about design and development? My inbox is open.</p>
           <div className="contact-details">
-            <a href="tel:+919876543210" className="contact-detail">
-              <span className="detail-icon"><Phone size={16} /></span>
-              <span><small>GIVE ME A CALL</small><strong>+91 9876543210</strong></span>
-              <ArrowUpRight size={16} />
-            </a>
             <a href="mailto:anurag@example.com" className="contact-detail">
               <span className="detail-icon"><Mail size={16} /></span>
-              <span><small>DROP AN EMAIL</small><strong>anurag@example.com</strong></span>
+              <span><strong>anurag@example.com</strong></span>
               <ArrowUpRight size={16} />
             </a>
-            <div className="contact-detail">
-              <span className="detail-icon"><MapPin size={16} /></span>
-              <span><small>LOCATION</small><strong>123 Street, City, 146001, Bihar, India</strong></span>
-              <Globe2 size={16} />
-            </div>
           </div>
         </div>
         <form className="contact-form reveal-up" onSubmit={submit} noValidate>
           <div className="form-heading">
-            <div><span className="eyebrow">YOUR NEXT BIG IDEA</span><h3>Send a message<span>.</span></h3></div>
-            <span className="form-number">FORM / 01</span>
+            <div><h3>Send a message<span>.</span></h3></div>
           </div>
           <div className="form-field">
             <label htmlFor="name">Your name</label>
@@ -82,7 +71,6 @@ export default function Contact() {
           {status === "invalid" && <p className="form-error" role="alert">Please complete all fields with a valid email address.</p>}
           {status === "ready" && <p className="form-success" role="status">Opening your email app with the message drafted.</p>}
           <button type="submit" className="button button-primary form-submit">Send message <Send size={15} /></button>
-          <p className="form-privacy"><span /> Your details stay yours. No spam, ever.</p>
         </form>
       </div>
     </section>

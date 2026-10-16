@@ -12,14 +12,6 @@ export default function Hero() {
   return (
     <section className="hero section-wrap" id="home" aria-labelledby="hero-title">
       <div className="hero-copy">
-        <motion.div
-          className="status-pill"
-          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-        >
-          <span className="availability-dot" /> DIGITAL CRAFT · FRONT-END DEVELOPMENT
-        </motion.div>
         <motion.h1
           id="hero-title"
           initial={reduceMotion ? false : { opacity: 0, y: 28 }}
@@ -57,14 +49,6 @@ export default function Hero() {
             Explore my work <ArrowDownRight size={16} />
           </a>
         </motion.div>
-        <motion.div
-          className="hero-footnote"
-          initial={reduceMotion ? false : { opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9, duration: 0.8 }}
-        >
-          <span className="hero-footnote-line" /> Scroll to discover <span className="hero-footnote-index">01 / 04</span>
-        </motion.div>
       </div>
       <div className="hero-visual">
         <div className="hero-orbit orbit-one" />
@@ -81,7 +65,6 @@ export default function Hero() {
           />
           <div className="image-shade" />
         </div>
-        <div className="visual-caption"><span>FIG. 01</span><span>DESIGN MEETS DEVELOPMENT</span></div>
       </div>
     </section>
   );

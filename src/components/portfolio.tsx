@@ -87,6 +87,21 @@ export default function Portfolio() {
       );
     });
 
+    const heroSection = root.querySelector<HTMLElement>(".hero");
+    const heroVisual = root.querySelector<HTMLElement>(".hero-visual");
+    if (heroSection && heroVisual) {
+      gsap.to(heroVisual, {
+        y: -24,
+        ease: "none",
+        scrollTrigger: {
+          trigger: heroSection,
+          start: "top top",
+          end: "bottom top",
+          scrub: 1.1,
+        },
+      });
+    }
+
     const shapeOne = root.querySelector<HTMLElement>(".parallax-shape-one");
     const shapeTwo = root.querySelector<HTMLElement>(".parallax-shape-two");
     if (!shapeOne || !shapeTwo) return;
